@@ -20,6 +20,10 @@ workflows:
   build_and_test:
     jobs:
       - build
+      - approve:
+          type: approval
+          requires: 
+            - build
       - test
   security_scan:
     jobs:
